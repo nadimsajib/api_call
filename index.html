@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<body>
+<div class="col-lg-8 col-md-8 col-sm-12">
+    <div ng-app="apiCall" ng-controller="apiCallController">
+        <!--<form action="" ng-submit="submit()">-->
+        <label for="company">Select Company</label>
+        <select id="company" name="company" ng-model="company_id" ng-change="submit()">
+            <option value="2">Bank of America</option>
+            <option value="3">United Nations</option>
+        </select><br><br>
+        <label for="sm_type">Select Social Media</label>
+        <select id="sm_type" name="sm_type" ng-model="sm_type_id" ng-change="submit()">
+            <option value="1">Google Plus</option>
+            <option value="2">Facebook</option>
+        </select>
+        <!--<input type="submit">-->
+        <!--</form>-->
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Post</th>
+                <th>Created Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="postDatas in postData">
+                <td>{{postDatas.post}}</td>
+                <td>{{postDatas.post_date}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
