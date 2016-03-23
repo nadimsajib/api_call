@@ -2,7 +2,7 @@ var app = angular.module('apiCall', []);
 app.controller('apiCallController', function($scope,$http) {
     $scope.submit = function(){
         if ($scope.company_id != null && $scope.sm_type_id != null) {
-            $scope.url = "http://socialdata.edutechsolutionsbd.com/api/v1/posts/123/2/2";
+            $scope.url = "http://socialdata.edutechsolutionsbd.com/api/v1/posts/123/"+ $scope.company_id +"/"+ $scope.sm_type_id +"";
             //$scope.url = "http://social.etsb.dev/api/v1/posts/123/2/2";
             $http({
                 method: 'jsonp',
